@@ -1,89 +1,68 @@
+/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-}
-
 /* Variables */
 :root {
-  /* Backgrounds */
   --bg: #0a0e18; /* page background */
-  --bg-soft: #12151f; /* outer / desk background */
-  --bezel: #05070d; /* device frame in mockups */
-  --surface: #111726; /* solid card (portrait box) */
-  --card: rgba(255, 255, 255, 0.035); /* glass card fill */
-  --card-dashed: rgba(255, 255, 255, 0.03); /* coming-soon card fill */
-  --chip: rgba(255, 255, 255, 0.05); /* skill chip fill */
-  --input: rgba(10, 14, 24, 0.6); /* input fill */
-  --header: rgba(10, 14, 24, 0.82); /* sticky header fill */
+  --surface: #111726; /* card background */
+  --accent: #8b7cf8; /* secondary text color */
+  --accent-2: #22c7f0; /* secondary text color 2*/
+  --grad: linear-gradient(95deg, #8b7cf8, #22c7f0); /* gradient text color */
+  --text: #e8ecf6; /* main text color */
+  --muted: #9aa5bd; /* paragraphs text color */
+  --line: rgba(255, 255, 255, 0.08); /* border color */
 
-  /* Accents */
-  --accent: #8b7cf8; /* violet — headings, labels, icons */
-  --accent-hover: #a99bff; /* violet hover / project tags text */
-  --accent-2: #22c7f0; /* cyan — subtitle, badges, links */
-  --accent-2-soft: #7fd8f5; /* cyan tag text */
-  --grad: linear-gradient(95deg, #8b7cf8, #22c7f0); /* buttons, name, rules */
-  --accent-tint: rgba(139, 124, 248, 0.12); /* violet tint fill */
-  --accent-line: rgba(139, 124, 248, 0.4); /* violet border */
-  --accent-2-tint: rgba(34, 199, 240, 0.1); /* cyan tint fill */
-  --accent-2-line: rgba(34, 199, 240, 0.35); /* cyan border */
-  --glow: 0 10px 30px rgba(109, 91, 245, 0.35); /* button glow */
-  --halo-violet: rgba(109, 91, 245, 0.22); /* top-right page halo */
-  --halo-cyan: rgba(34, 199, 240, 0.1); /* left page halo */
-
-  /* Text */
-  --text: #e8ecf6; /* main text */
-  --text-2: #cfd6e6; /* labels, outline-button text */
-  --nav: #a8b2c8; /* nav links */
-  --muted: #9aa5bd; /* paragraphs */
-  --muted-2: #8b95ad; /* mockup captions */
-  --footer: #7d8798; /* footer, form hint */
-  --placeholder-l: #6d7891; /* placeholder labels */
-  --placeholder: #5c6780; /* input placeholder */
-  --faint: #525c72; /* "drop a photo here" */
-
-  /* Lines */
-  --line: rgba(255, 255, 255, 0.08); /* card borders */
-  --line-strong: rgba(255, 255, 255, 0.12); /* inputs, icon buttons */
-  --line-soft: rgba(255, 255, 255, 0.07); /* header + footer rules */
-
-  /* Radii */
-  --r-chip: 10px;
-  --r-card: 16px;
-  --r-pill: 999px;
+  --p-1: 8px;
+  --p-2: 16px;
+  --p-3: 32px;
 }
 
-.header-section {
+/* Body */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Header */
+.site-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 16px 16px;
-  border-bottom: var(--line) solid 2px;
-  font-weight: 600;
+  padding: var(--p-2) var(--p-3);
+  border-bottom: 2px solid var(--line);
 }
 
-.name span {
+/* Logo / Name */
+.site-logo span {
   background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  list-style: none;
+/* Navigation */
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
 }
 
-.links {
-  color: var(--nav);
-  list-style-type: none;
-  text-decoration: none;
-  padding: 8px;
+.nav-links {
+    display: inline-block;
+    padding: 8px;
+    color:var(--nav);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links:hover {
+    color:var(--text);
+    transform: translateY(-1px);
 }
